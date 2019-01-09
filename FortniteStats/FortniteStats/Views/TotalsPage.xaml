@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FortniteStats.Views.TotalsPage"
+             Title="Totals">
+    <ContentPage.Content>
+        <Grid Margin="3,6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0">
+                <Frame CornerRadius="5">
+                    <StackLayout>
+                        <Label Text="Wins" />
+                        <Label x:Name="WinsTotal" FontSize="Medium"/>
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="5">
+                    <StackLayout>
+                        <Label Text="Winrate" />
+                        <Label x:Name="WinrateTotal" FontSize="Medium" />
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="5">
+                    <StackLayout>
+                        <Label Text="Matches Played"/>
+                        <Label x:Name="MatchesPlayedTotal" FontSize="Medium"/>
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="5">
+                    <StackLayout>
+                        <Label Text="Score" FontSize="Medium"/>
+                        <Label x:Name="ScoreTotal"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            <StackLayout Grid.Column="1">
+                <Frame CornerRadius="5">
+                    <StackLayout>
+                        <Label Text="Kills" />
+                        <Label x:Name="KillsTotal" FontSize="Medium"/>
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="5">
+                    <StackLayout>
+                        <Label Text="K/D Ratio" />
+                        <Label x:Name="KDTotal" FontSize="Medium" />
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="5">
+                    <StackLayout>
+                        <Label Text="Hours Played"/>
+                        <Label x:Name="HoursPlayedTotal" FontSize="Medium"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

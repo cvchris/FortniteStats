@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FortniteStats.Views.SoloDuoSquadPage">
+    <ContentPage.Content>
+        <Grid Margin="3,6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0">
+                <Frame CornerRadius="5">
+                    <StackLayout>
+                        <Label Text="Top 1" />
+                        <Label x:Name="Top1" FontSize="Medium"/>
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="5">
+                    <StackLayout>
+                        <Label x:Name="Top3Text" />
+                        <Label x:Name="Top3" FontSize="Medium" />
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="5">
+                    <StackLayout>
+                        <Label Text="Winrate" />
+                        <Label x:Name="winrate" FontSize="Medium" />
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="5">
+                    <StackLayout>
+                        <Label Text="Matches Played"/>
+                        <Label x:Name="MatchesPlayed" FontSize="Medium"/>
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="5">
+                    <StackLayout>
+                        <Label Text="Score" FontSize="Medium"/>
+                        <Label x:Name="Score"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            <StackLayout Grid.Column="1">
+                <Frame CornerRadius="5">
+                    <StackLayout>
+                        <Label x:Name="Top2Text" />
+                        <Label x:Name="Top2" FontSize="Medium"/>
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="5">
+                    <StackLayout>
+                        <Label Text="Kills" />
+                        <Label x:Name="kills" FontSize="Medium" />
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="5">
+                    <StackLayout>
+                        <Label Text="K/D Ratio" />
+                        <Label x:Name="KD" FontSize="Medium" />
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="5">
+                    <StackLayout>
+                        <Label Text="Hours Played"/>
+                        <Label x:Name="HoursPlayed" FontSize="Medium"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
