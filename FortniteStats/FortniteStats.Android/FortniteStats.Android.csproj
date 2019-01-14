@@ -63,6 +63,8 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdBanner_Droid.cs" />
+    <Compile Include="AdInterstitial_Droid.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

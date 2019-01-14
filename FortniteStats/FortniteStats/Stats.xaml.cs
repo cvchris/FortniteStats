@@ -19,7 +19,6 @@ namespace FortniteStats
 		{
 			
 			InitializeComponent ();
-            int i;
             statspublic = stats;
             user.Text = stats.username;
 			//platformsList.ItemsSource = ;

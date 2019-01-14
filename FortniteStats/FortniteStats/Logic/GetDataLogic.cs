@@ -56,6 +56,7 @@ namespace FortniteStats.Logic
             }
             catch (Exception e)
             {
+                
                 GetStats error = new GetStats();
                 error.uid = "errornointernet";
                 return error;

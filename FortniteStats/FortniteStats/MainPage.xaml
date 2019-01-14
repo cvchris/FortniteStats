@@ -20,22 +20,25 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="30*"/>
             <RowDefinition Height="70*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
 
-        <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="10,0">
-            
-            <Entry x:Name="username" Placeholder="Username" WidthRequest="200" />
+            <StackLayout Grid.Row="0">
+                <Label Text="Search" FontSize="Large" FontAttributes="Bold" Margin="20,0,0,0"/>
+                <StackLayout  Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                
+                <Entry x:Name="username" Placeholder="Username" WidthRequest="200" />
             <Button x:Name="search" Text="Search"  />
         </StackLayout>
-        <StackLayout Grid.Row="1">
+            </StackLayout>
+            <StackLayout Grid.Row="1">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50*"/>
                     <ColumnDefinition Width="50*"/>
                 </Grid.ColumnDefinitions>
                 <StackLayout Grid.Column="0">
-                    <Label Text="Recent Searches" HorizontalOptions="Center"/>
+                        <Label Text="Recent Searches" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Medium"/>
                     <ListView x:Name="recentSearchesList">
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -45,7 +48,7 @@
                     </ListView>
                 </StackLayout>
                 <StackLayout Grid.Column="1">
-                    <Label Text="Favorites" HorizontalOptions="Center"/>
+                    <Label Text="Favorites" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Medium"/>
                     <ListView x:Name="FavoritesList">
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -58,7 +61,7 @@
 
             </Grid>
         </StackLayout>
-        
-    </Grid>
+            <local:AdBanner Size="Standardbanner" Grid.Row="2"/>
+        </Grid>
     </StackLayout>
 </ContentPage>
