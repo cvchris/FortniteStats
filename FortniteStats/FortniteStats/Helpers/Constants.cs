@@ -12,5 +12,6 @@ namespace FortniteStats.Helpers
         public const string USER_ID = "https://fortnite-public-api.theapinetwork.com/prod09/users/id?username={0}";
         public const string USER_STATS = "https://fortnite-public-api.theapinetwork.com/prod09/users/public/br_stats?user_id={0}&platform={1}";
         public const string CHALLENGES = "https://fortnite-public-api.theapinetwork.com/prod09/challenges/get?season=current";
+        public const string STATUS = "https://fortnite-public-api.theapinetwork.com/prod09/status/fortnite_server_status";
     }
 }

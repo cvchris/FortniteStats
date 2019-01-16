@@ -14,7 +14,13 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout>
-        <ActivityIndicator x:Name="activityIndicator" IsRunning="False" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <StackLayout>
+            <ActivityIndicator x:Name="activityIndicator" IsRunning="False" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <!--<Frame>
+                we create the 
+            </Frame>-->
+        </StackLayout>
+        
 
         <Grid>
         <Grid.RowDefinitions>
@@ -39,23 +45,23 @@
                 </Grid.ColumnDefinitions>
                 <StackLayout Grid.Column="0">
                         <Label Text="Recent Searches" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Medium"/>
-                    <ListView x:Name="recentSearchesList">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <TextCell Text="{Binding list}"/>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                        <ListView x:Name="recentSearchesList" ItemSelected="RecentSearchesList_ItemSelected" ItemTapped="SearchfromList" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextCell Text="{Binding .}"/>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                 </StackLayout>
                 <StackLayout Grid.Column="1">
                     <Label Text="Favorites" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Medium"/>
-                    <ListView x:Name="FavoritesList">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <TextCell Text="{Binding list}"/>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                        <ListView x:Name="FavoritesListView" ItemSelected="FavoritesListView_ItemSelected" ItemTapped="SearchfromList">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextCell Text="{Binding .}"/>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                   
                 </StackLayout>
 

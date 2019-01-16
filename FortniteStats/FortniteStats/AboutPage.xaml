@@ -9,10 +9,10 @@
                 <RowDefinition Height="30*"/>
                 <RowDefinition Height="70*"/>
             </Grid.RowDefinitions>
-            <StackLayout Orientation="Horizontal" Grid.Row="0" Margin="10,20">
-                <Image Source="icon.png" VerticalOptions="Center" HeightRequest="100" />
+            <StackLayout Orientation="Horizontal" Grid.Row="0" Margin="20,10">
+                <Image Source="iconround.png" VerticalOptions="Center" HeightRequest="100" />
 
-                <Label Text="FortniteStats" FontSize="Large" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                <Label Text="FortniteStats" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
 
 
             </StackLayout>
