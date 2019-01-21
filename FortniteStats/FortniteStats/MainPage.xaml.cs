@@ -11,6 +11,7 @@ namespace FortniteStats
 {
     public partial class MainPage : ContentPage
     {
+        //IAdInterstitial adInterstitial;
         public List<String> favorites = new List<string>();
         public List<String> recents = new List<string>();
 
@@ -18,8 +19,9 @@ namespace FortniteStats
         {
             InitializeComponent();
 
-            this.search.Clicked += Button_Clicked; 
+            this.search.Clicked += Button_Clicked;
             //recentSearchesList.SeparatorVisibility = SeparatorVisibility.None;
+            //adInterstitial = DependencyService.Get<IAdInterstitial>();
         }
 
         
@@ -35,6 +37,7 @@ namespace FortniteStats
         public async void searchStats(string usernameText)
         {
             search.IsEnabled = false;
+            //adInterstitial.ShowAd();
             activityIndicator.IsRunning = true;
             var id = await GetDataLogic.GetUserStats(usernameText);
             activityIndicator.IsRunning = false;
@@ -70,6 +73,8 @@ namespace FortniteStats
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            //StatusBox.Color = Color.Green;
+            //Status.Text = "UP";
             search.IsEnabled = true;
             recents = DependencyService.Get<IGetLists>().GetRecents();
             recentSearchesList.ItemsSource = recents;

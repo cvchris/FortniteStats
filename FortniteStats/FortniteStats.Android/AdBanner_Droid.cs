@@ -49,13 +49,13 @@ namespace FortniteStats.Droid
                 }
 
                 // TODO: change this id to your admob id
-                // adView.AdUnitId = "ca-app-pub-2860697859082710/3399726488";
-                adView.AdUnitId = "ca-app-pub-3940256099942544/6300978111";
+                 adView.AdUnitId = "ca-app-pub-2860697859082710/2092089339";
 
                 //this one below is the demo one
                 //adView.AdUnitId = "ca-app-pub-3940256099942544/6300978111";
 
                 var requestbuilder = new AdRequest.Builder();
+                requestbuilder.AddTestDevice("8E7EBEA7A3C191F6C58B3B24977A9BE8");
                 adView.LoadAd(requestbuilder.Build());
 
                 SetNativeControl(adView);

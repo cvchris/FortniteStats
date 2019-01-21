@@ -14,7 +14,7 @@ namespace FortniteStats.Droid
             interstitialAd = new InterstitialAd(Android.App.Application.Context);
 
             // TODO: change this id to your admob id
-            interstitialAd.AdUnitId = "ca-app-pub-2860697859082710/3399726488";
+            interstitialAd.AdUnitId = "	ca-app-pub-3940256099942544/1033173712";
             LoadAd();
         }
 

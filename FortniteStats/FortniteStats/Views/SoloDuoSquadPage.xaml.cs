@@ -16,6 +16,7 @@ namespace FortniteStats.Views
 		{
 			InitializeComponent ();
             Title = mode;
+            double hours;
             if(mode == "Solo")
             {
                 Top1.Text = stats.stats.placetop1_solo.ToString();
@@ -27,7 +28,16 @@ namespace FortniteStats.Views
                 winrate.Text = stats.stats.winrate_solo.ToString() + "%";
                 KD.Text = stats.stats.kd_solo.ToString();
                 MatchesPlayed.Text = stats.stats.matchesplayed_solo.ToString();
-                HoursPlayed.Text = (stats.stats.minutesplayed_solo / 60.0).ToString();
+                hours = stats.stats.minutesplayed_solo / 60.0;
+                if (hours < 1)
+                {
+                    HoursPlayed.Text = "Data Error";
+                }
+                else
+                {
+                    HoursPlayed.Text = (hours).ToString();
+                }
+                
                 Score.Text = stats.stats.score_solo.ToString();
 
 
@@ -43,7 +53,15 @@ namespace FortniteStats.Views
                 winrate.Text = stats.stats.winrate_duo.ToString() + "%";
                 KD.Text = stats.stats.kd_duo.ToString();
                 MatchesPlayed.Text = stats.stats.matchesplayed_duo.ToString();
-                HoursPlayed.Text = (stats.stats.minutesplayed_duo / 60.0).ToString();
+                hours = stats.stats.minutesplayed_duo / 60.0;
+                if (hours < 1)
+                {
+                    HoursPlayed.Text = "Data Error";
+                }
+                else
+                {
+                    HoursPlayed.Text = (hours).ToString();
+                }
                 Score.Text = stats.stats.score_duo.ToString();
             }
             else
@@ -57,7 +75,15 @@ namespace FortniteStats.Views
                 winrate.Text = stats.stats.winrate_squad.ToString() + "%";
                 KD.Text = stats.stats.kd_squad.ToString();
                 MatchesPlayed.Text = stats.stats.matchesplayed_squad.ToString();
-                HoursPlayed.Text = (stats.stats.minutesplayed_squad / 60.0).ToString();
+                hours = stats.stats.minutesplayed_squad / 60.0;
+                if (hours < 1)
+                {
+                    HoursPlayed.Text = "Data Error";
+                }
+                else
+                {
+                    HoursPlayed.Text = (hours).ToString();
+                }
                 Score.Text = stats.stats.score_squad.ToString();
             }
 
