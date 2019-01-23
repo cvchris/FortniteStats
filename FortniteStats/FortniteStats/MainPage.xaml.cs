@@ -1,5 +1,9 @@
 ﻿using FortniteStats.Helpers;
 using FortniteStats.Logic;
+using FortniteStats.Model;
+using FortniteStats.Views;
+using Rg.Plugins.Popup.Pages;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,20 +43,39 @@ namespace FortniteStats
             search.IsEnabled = false;
             //adInterstitial.ShowAd();
             activityIndicator.IsRunning = true;
-            var id = await GetDataLogic.GetUserStats(usernameText);
+            var id = await GetDataLogic.GetID(usernameText);
             activityIndicator.IsRunning = false;
+            
             if (id.uid == "error")
             {
                 await DisplayAlert("Error", "Could not find username: " + usernameText, "OK");
                 search.IsEnabled = true;
+                return;
             }
             else if (id.uid == "errornointernet")
             {
                 await DisplayAlert("Error", "Could not connect to the Internet. Please check your connection and try again.", "OK");
                 search.IsEnabled = true;
+                return;
             }
             else
             {
+                if(id.platforms.Count > 1)
+                {
+                    //we have to show alert to choose platform and then call get user stats.
+                    await PopupNavigation.Instance.PushAsync(new PlatformPopupPage(id.platforms));
+                    var userstats = await GetDataLogic.GetStats(id, PlatformSelected.selectedPlatform);
+                    await Navigation.PushAsync(new Stats(userstats, favorites));
+
+                }
+                else
+                {
+                    //we call it without asking because there is only one platform.
+                    var userstats = await GetDataLogic.GetStats(id, 0);
+                    await Navigation.PushAsync(new Stats(userstats, favorites));
+                }
+                
+
                 var resultsearch = recents.Contains(id.username);
                 if(!resultsearch)
                 {
@@ -60,7 +83,7 @@ namespace FortniteStats
                     DependencyService.Get<IGetLists>().SetRecents(recents);
                 }
                 
-                await Navigation.PushAsync(new Stats(id,favorites));
+                
             }
 
         }

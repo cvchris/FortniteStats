@@ -24,7 +24,7 @@ namespace FortniteStats
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Device.OpenUri(new Uri("market://details?id=com.chrisvamvalis.ypologismosMorion"));
+            Device.OpenUri(new Uri("market://details?id=com.chrisvamvalis.FortniteStats"));
 
         }
     }

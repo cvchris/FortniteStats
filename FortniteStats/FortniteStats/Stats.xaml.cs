@@ -38,18 +38,18 @@ namespace FortniteStats
 
 
 
-			if(stats.platforms.Contains("pc"))
-            {
-                pc.IsVisible = true;
-            }
-            if(stats.platforms.Contains("ps4"))
-            {
-                ps4.IsVisible = true;
-            }
-            if(stats.platforms.Contains("xbox"))
-            {
-                xbox.IsVisible = true;
-            }
+			//if(stats.platforms.Contains("pc"))
+   //         {
+   //             pc.IsVisible = true;
+   //         }
+   //         if(stats.platforms.Contains("ps4"))
+   //         {
+   //             ps4.IsVisible = true;
+   //         }
+   //         if(stats.platforms.Contains("xbox"))
+   //         {
+   //             xbox.IsVisible = true;
+   //         }
 
 
 			//for (i = 0; i < stats.platforms.Count(); i++)
