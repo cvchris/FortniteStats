@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 
 namespace FortniteStats.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+	//[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PlatformPopupPage : Rg.Plugins.Popup.Pages.PopupPage
 	{
         //public int selectedplatform;
@@ -25,10 +25,10 @@ namespace FortniteStats.Views
 
         }
 
-        private void PlatformPicker_SelectedIndexChanged(object sender, EventArgs e)
+        private async void PlatformPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             PlatformSelected.selectedPlatform = platformPicker.SelectedIndex;
-            PopupNavigation.Instance.PopAsync();
+            await PopupNavigation.Instance.PopAsync();
             //Navigation.PopAsync();
         }
     }

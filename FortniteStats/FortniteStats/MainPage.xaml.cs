@@ -18,11 +18,12 @@ namespace FortniteStats
         //IAdInterstitial adInterstitial;
         public List<String> favorites = new List<string>();
         public List<String> recents = new List<string>();
+        public GetID publicid = new GetID();
 
         public MainPage()
         {
             InitializeComponent();
-
+            platformselect.HeightRequest = 0;
             this.search.Clicked += Button_Clicked;
             //recentSearchesList.SeparatorVisibility = SeparatorVisibility.None;
             //adInterstitial = DependencyService.Get<IAdInterstitial>();
@@ -44,6 +45,7 @@ namespace FortniteStats
             //adInterstitial.ShowAd();
             activityIndicator.IsRunning = true;
             var id = await GetDataLogic.GetID(usernameText);
+            publicid = id;
             activityIndicator.IsRunning = false;
             
             if (id.uid == "error")
@@ -62,11 +64,21 @@ namespace FortniteStats
             {
                 if(id.platforms.Count > 1)
                 {
+                    platformselect.ItemsSource = publicid.platforms.ToList();
                     //we have to show alert to choose platform and then call get user stats.
-                    await PopupNavigation.Instance.PushAsync(new PlatformPopupPage(id.platforms));
-                    var userstats = await GetDataLogic.GetStats(id, PlatformSelected.selectedPlatform);
-                    await Navigation.PushAsync(new Stats(userstats, favorites));
+                    //await PopupNavigation.Instance.PushAsync(new PlatformPopupPage(id.platforms));
+                    //platformselect.HeightRequest = -1;
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        if (platformselect.IsFocused)
+                            platformselect.Unfocus();
 
+                        platformselect.Focus();
+                    });
+
+
+                    //platformselect.Focus();
+                    //await DisplayAlert("hi", platformselect.SelectedIndex.ToString(), "ok");
                 }
                 else
                 {
@@ -96,6 +108,7 @@ namespace FortniteStats
         protected override void OnAppearing()
         {
             base.OnAppearing();
+                
             //StatusBox.Color = Color.Green;
             //Status.Text = "UP";
             search.IsEnabled = true;
@@ -119,6 +132,14 @@ namespace FortniteStats
         {
             var imported = e.Item;
             searchStats(imported.ToString());
+        }
+
+        private async void Platformselect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //the second time it doesnt show the picker and it automatically enters -1... it returns null exception. Has to be investigated.
+            //platformselect.Unfocus();
+            var userstats = await GetDataLogic.GetStats(publicid, platformselect.SelectedIndex);
+            await Navigation.PushAsync(new Stats(userstats, favorites));
         }
     }
 }

@@ -41,6 +41,7 @@
                     <Entry x:Name="username" Placeholder="Username" WidthRequest="200" />
                     <Button x:Name="search" Text="Search"  />
                 </StackLayout>
+                <Picker x:Name="platformselect" SelectedIndexChanged="Platformselect_SelectedIndexChanged" Title="Select Platform:" />
             </StackLayout>
             <StackLayout Grid.Row="1">
                 <Grid>
