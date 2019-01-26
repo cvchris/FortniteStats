@@ -26,6 +26,8 @@
                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
                         </Label.GestureRecognizers>
                     </Label>
+                    <Label Text="FORTNITE is a trademark of Epic Games, Inc." />
+                    <Label Text="The app uses Fortnite API (https://fortniteapi.com) for its data."/>
                     <Frame Margin="0,10,0,0" CornerRadius="3">
                         <StackLayout>
                             <Label Text="If you want to support us, give us 5 stars on Google Play"/>
