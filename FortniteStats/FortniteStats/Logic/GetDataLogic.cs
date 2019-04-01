@@ -22,7 +22,7 @@ namespace FortniteStats.Logic
                     var response = await client.GetAsync(urlid);
                     var json = await response.Content.ReadAsStringAsync();
 
-                    if (json.Contains(" \"error\": true"))
+                    if (json.Contains("\"success\":false"))         
                     {
                         //THE METHOD SHOULD STOP HERE IF THERE IS A PROBLEM AND THE USER COULD NOT BE FOUND.
                         GetID error = new GetID();
