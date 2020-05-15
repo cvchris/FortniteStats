@@ -5,6 +5,7 @@ using FortniteStats.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Android.Content;
+using FortniteStats.Helpers;
 
 [assembly: ExportRenderer(typeof(AdBanner), typeof(AdBanner_Droid))]
 namespace FortniteStats.Droid
@@ -49,7 +50,7 @@ namespace FortniteStats.Droid
                 }
 
                 // TODO: change this id to your admob id
-                 adView.AdUnitId = "ca-app-pub-2860697859082710/2092089339";
+                 adView.AdUnitId = Secrets.ANDROID_BANNER_KEY;
 
                 //this one below is the demo one
                 //adView.AdUnitId = "ca-app-pub-3940256099942544/6300978111";

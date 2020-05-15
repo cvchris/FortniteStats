@@ -1,5 +1,6 @@
 ﻿using Android.Gms.Ads;
 using FortniteStats.Droid;
+using FortniteStats.Helpers;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(AdInterstitial_Droid))]
@@ -14,7 +15,7 @@ namespace FortniteStats.Droid
             interstitialAd = new InterstitialAd(Android.App.Application.Context);
 
             // TODO: change this id to your admob id
-            interstitialAd.AdUnitId = "	ca-app-pub-3940256099942544/1033173712";
+            interstitialAd.AdUnitId = Secrets.ANDROID_INTERESTIAL_KEY;
             LoadAd();
         }
 

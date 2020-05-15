@@ -2,6 +2,7 @@ using System;
 using CoreGraphics;
 using Google.MobileAds;
 using FortniteStats;
+using FortniteStats.Helpers;
 using FortniteStats.iOS;
 using UIKit;
 using Xamarin.Forms;
@@ -46,7 +47,7 @@ namespace FortniteStats.iOS
                 }
 
                 // TODO: change this id to your admob id
-                bannerView.AdUnitID = "ca-app-pub-2860697859082710/6688298447";
+                bannerView.AdUnitID = Secrets.IOS_BANNER_KEY;
 
                 foreach (UIWindow uiWindow in UIApplication.SharedApplication.Windows)
                 {
